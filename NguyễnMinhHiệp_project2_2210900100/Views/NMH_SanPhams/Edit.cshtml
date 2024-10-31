@@ -1,0 +1,33 @@
+﻿@model NguyễnMinhHiệp_project2_2210900100.Models.SanPham
+
+@{
+    ViewBag.Title = "Chỉnh Sửa Sản Phẩm";
+}
+
+<h2>Chỉnh Sửa Sản Phẩm</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TenSanPham)
+        @Html.TextBoxFor(model => model.TenSanPham, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.TenSanPham)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Gia)
+        @Html.TextBoxFor(model => model.Gia, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Gia)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.SoLuong)
+        @Html.TextBoxFor(model => model.SoLuong, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.SoLuong)
+    </div>
+
+    <button type="submit" class="btn btn-primary">Cập Nhật</button>
+    @Html.ActionLink("Trở về danh sách", "Index", "NMH_SanPhams", null, new { @class = "btn btn-secondary" })
+}

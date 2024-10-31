@@ -1,0 +1,42 @@
+﻿@model NguyễnMinhHiệp_project2_2210900100.Models.NhanVien
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>NhanVien</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenNhanVien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenNhanVien)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChucVu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChucVu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Luong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Luong)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaNhanVien }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

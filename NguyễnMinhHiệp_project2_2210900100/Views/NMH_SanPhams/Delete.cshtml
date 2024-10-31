@@ -1,0 +1,31 @@
+﻿@model NguyễnMinhHiệp_project2_2210900100.Models.SanPham
+
+@{
+    ViewBag.Title = "Xóa Sản Phẩm";
+}
+
+<h2>Xóa Sản Phẩm</h2>
+
+<div>
+    <h4>Sản Phẩm</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(model => model.TenSanPham)</dt>
+        <dd>@Html.DisplayFor(model => model.TenSanPham)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Gia)</dt>
+        <dd>@Html.DisplayFor(model => model.Gia)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.SoLuong)</dt>
+        <dd>@Html.DisplayFor(model => model.SoLuong)</dd>
+    </dl>
+
+    <h4>Bạn có chắc chắn muốn xóa sản phẩm này?</h4>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <input type="submit" value="Xóa" class="btn btn-danger" />
+        @Html.ActionLink("Trở về danh sách", "Index", "NMH_SanPhams", null, new { @class = "btn btn-secondary" })
+    }
+</div>

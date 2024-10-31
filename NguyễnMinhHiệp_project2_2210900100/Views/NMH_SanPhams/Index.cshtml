@@ -1,0 +1,39 @@
+﻿@model IEnumerable<NguyễnMinhHiệp_project2_2210900100.Models.SanPham>
+
+@{
+    ViewBag.Title = "Sản Phẩm";
+}
+
+<h2>Sản Phẩm</h2>
+
+<p>
+    @Html.ActionLink("Tạo Sản Phẩm Mới", "Create", "NMH_SanPhams", null, new { @class = "btn btn-primary" })
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.First().MaSanPham)</th>
+            <th>@Html.DisplayNameFor(model => model.First().TenSanPham)</th>
+            <th>@Html.DisplayNameFor(model => model.First().Gia)</th>
+            <th>@Html.DisplayNameFor(model => model.First().SoLuong)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.MaSanPham)</td>
+                <td>@Html.DisplayFor(modelItem => item.TenSanPham)</td>
+                <td>@Html.DisplayFor(modelItem => item.Gia)</td>
+                <td>@Html.DisplayFor(modelItem => item.SoLuong)</td>
+                <td>
+                    @Html.ActionLink("Chi tiết", "Details", "NMH_SanPhams", new { id = item.MaSanPham }, new { @class = "btn btn-info" }) |
+                    @Html.ActionLink("Chỉnh sửa", "Edit", "NMH_SanPhams", new { id = item.MaSanPham }, new { @class = "btn btn-warning" }) |
+                    @Html.ActionLink("Xóa", "Delete", "NMH_SanPhams", new { id = item.MaSanPham }, new { @class = "btn btn-danger", onclick = "return confirm('Bạn có chắc chắn muốn xóa?');" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
